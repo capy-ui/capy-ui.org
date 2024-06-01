@@ -1,0 +1,12 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="color-scheme" content="light dark">	
+	<title>{{ .Page.Title }}</title>
+	{{ $indexCss := resources.Get "css/index.scss" | toCSS }}
+	{{ $css := slice $indexCss | resources.Concat "css/main-global.css" }}
+	{{ $style := $css | fingerprint | minify }}
+	<link rel="stylesheet" href="{{ $style.Permalink }}">
+	<script defer data-domain="capy-ui.org" src="https://plausible.capy-ui.org/js/script.js"></script>
+	<link href="index.xml" rel="alternate" title="Capy UI blog" type="application/atom+xml" />
+</head>

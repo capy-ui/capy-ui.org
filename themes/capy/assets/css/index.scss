@@ -1,0 +1,216 @@
+@import "chota";
+@import "inter/inter";
+
+$color-strong: #cc5803;
+$color-medium: #e37826;
+$color-light: #ffaa33;
+
+:root {
+	--menu-hovered: #f4680b;
+	--font-family-sans: "Inter", "system-ui", "sans-serif";
+	--bg-color: #ffffff;
+	--bg-secondary-color: #eeeeee;
+	--font-color: #000000;
+	--font-size: 2rem;
+	--shadow-color: 0deg 0% 0%;
+  --light-color: #ffffff;
+  --light-elevation-low:
+  inset 3px 2px 4px white;
+  --shadow-elevation-low:
+  0.8px 0.8px 1.7px hsl(var(--shadow-color) / 0),
+  1.6px 1.6px 3.4px hsl(var(--shadow-color) / 0.14),
+  3.3px 3.3px 7px hsl(var(--shadow-color) / 0.17);
+  --shadow-elevation-medium:
+  0.8px 0.8px 1.7px hsl(var(--shadow-color) / 0),
+  4px 4px 8.5px hsl(var(--shadow-color) / 0.06),
+  8.1px 8.1px 17.2px hsl(var(--shadow-color) / 0.11),
+  16.5px 16.7px 35.2px hsl(var(--shadow-color) / 0.17);
+  --shadow-elevation-high:
+  0.8px 0.8px 1.7px hsl(var(--shadow-color) / 0),
+  8.7px 8.8px 18.6px hsl(var(--shadow-color) / 0.03),
+  15.5px 15.6px 33px hsl(var(--shadow-color) / 0.05),
+  22.7px 22.9px 48.4px hsl(var(--shadow-color) / 0.08),
+  31.7px 32px 67.6px hsl(var(--shadow-color) / 0.1),
+  43.9px 44.3px 93.6px hsl(var(--shadow-color) / 0.13),
+  60.9px 61.5px 129.8px hsl(var(--shadow-color) / 0.16),
+  84.1px 84.9px 179.3px hsl(var(--shadow-color) / 0.18)
+}
+a:hover {
+	opacity: 1 !important;
+}
+
+button {
+  cursor:pointer;
+  color:black;
+  background-color:#f0f0f0;
+  box-shadow:var(--light-elevation-low),var(--shadow-elevation-low);
+  border:1px rgba(0,0,0,0.3) solid;
+  border-radius:8px;
+  font-size:1.0em;
+  padding:0.8em 0.8em;
+  margin:0.2em 0.3em;
+  transition:box-shadow .2s ease-in-out, background-color .2s, border .5s
+}
+button:hover {
+  box-shadow:var(--light-elevation-low),var(--shadow-elevation-medium);
+}
+button:hover,
+button:focus {
+	color: black;
+	opacity: 1 !important;
+  border-color:rgba(0,0,0,0.7);
+}
+button:active {
+  box-shadow:var(--shadow-elevation-medium);
+  background-color:#e0e0e0;
+}
+
+@supports (font-variation-settings: normal) {
+	--font-family-sans: "Inter var", "system-ui", "sans-serif";
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-color: #222;
+		--bg-secondary-color: #444;
+		--font-color: #eee;
+	}
+	/*.content img {
+		border: 1px solid white;
+	}*/
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	line-height: 1.4;
+}
+
+p {
+	display: inline-block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+h1, h2, h3, h4 {
+	font-weight: 600;
+	// font-family: "IBM Plex Sans";
+}
+
+code, pre {
+	color: #fff;
+	background-color: #333;
+}
+
+#hero {
+	background-image: linear-gradient(
+		to bottom,
+		$color-medium,
+		$color-light
+	);
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+}
+
+.center {
+	display: block;
+	text-align: center;
+	max-width: 75%;
+	margin: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.content {
+	max-width: 1300px;
+	margin: auto;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.navbar {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 50px;
+
+	ul {
+		list-style-type: none;
+		width: 100%;
+		// max-width: 1200px;
+		padding-left: 1em;
+		padding-right: 1em;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		li {
+			a {
+				display: inline-block;
+				color: rgb(43, 43, 43);
+				text-decoration: none;
+				padding: 1em 1em 1em 1em;
+				transition: ease-in-out 0.2s color, 0.2s background-color;
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+.navbar ul li a:hover {
+	color: rgb(102, 102, 102);
+}
+
+.get-started a {
+	color: black !important;
+	background-color: rgba(255, 255, 200, 0.4);
+	border-radius: 10px;
+}
+
+.get-started a:hover {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.logo a {
+	font-size: 20px !important;
+	img {
+		border: none;
+	}
+}
+
+.shadow-lg {
+	box-shadow: 1px 3px 15px var(--color-grey);
+}
+
+.rounded-lg {
+	border-radius: 10px;
+}
+
+.card {
+	padding: 1.5em;
+	color: #333;
+	--bg-color: #fff;
+	transition: ease-in-out 0.2s background-color;
+}
+
+.bento-card {
+	--bg-color: #eee;
+	color: #000;
+}
+.bento-card:hover {
+	--bg-color: #eef;
+}
+
+@media (prefers-color-scheme: dark) {
+	.bento-card {
+		--bg-color: #111;
+		color: #eee;
+	}
+	.bento-card:hover {
+		--bg-color: #112;
+	}
+}

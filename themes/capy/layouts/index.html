@@ -1,0 +1,88 @@
+{{ define "hero" }}
+<div class="row" style="color: #333">
+	<div style="line-height: 1.2;" class="">
+		<h1 style="line-height: 1.0; font-size: 6rem; font-family: Arial, Helvetica, sans-serif; text-align: center;">Capy — Create cross-platform apps in Zig</h1>
+		<p style="text-align: center; display: block;">Effortlessly get a native experience across all platforms.</p>
+		<a href="/docs/getting-started/installation" class="text-white" style="margin: auto; display: block;"><button class="" style="margin: auto; display: block;">Get Started</button></a>
+	</div>
+</div>
+<div>
+	<!-- TODO: image carousel -->
+	<img src="https://raw.githubusercontent.com/zenith391/bottom-zig-gui/main/.github/screenshot.png" alt="Simple application demonstrating Capy UI" style="display: block; margin: auto; max-width: min(35em, 80vw);"></img>
+</div>
+{{end}}
+
+{{ define "main" }}
+	<br>
+
+	<!-- Bento -->
+	<div class="container row">
+		<div class="card bento-card" style="margin-bottom: 1em">
+			<h2 style="text-align: center">Across<br>all platforms.</h2>
+			<p>
+				Capy uses Zig's cross-compilation abilities in order to create an UI toolkit that runs on all major operating systems. There's no more hassle with different dev environments,
+				you can compile from everywhere to anywhere.
+			</p>
+			<div class="is-center">
+				<img src="/img/osm-viewer-gtk.jpg" alt="OpenStreetMap viewer made with Capy UI, running with GTK+" style="max-height: 20em" loading="lazy">
+			</div>
+			<br>
+			<p>Windows, Linux, Web supported. macOS and Android WIP. iOS planned.</p>
+		</div>
+		<div class="col-6-md">
+			<div class="card bento-card" style="margin-bottom: 1em">
+				<h2 style="text-align: center">Simple</h2>
+				<p>
+					Capy apps always have a true native look and feel on every platform.
+					Your users won't have to bother with small behaviour differences compared to other apps. This makes a huge difference when discovering a software.
+				</p>
+				<div class="col is-center">
+					<img src="/img/calculator-win32.png" alt="Calculator made with Capy UI, running on Windows 10" style="min-width: 80%;" loading="lazy">
+				</div>
+			</div>
+		</div>
+		<div class="col-6-md">
+			<div class="card bento-card" style="margin-bottom: 1em">
+				<h2 style="text-align: center">Native components</h2>
+				<p>
+					Capy always uses native UIs. This mean the user interfaces you make will always have the native look and feel of the target platform. When compiled for Windows, it looks like a Windows app. When compiled for Linux, it looks like a Linux app, and so on.
+				</p>
+				<p>
+					This provides OS-grade support for keyboard shortcuts, IME, accessibility. This ensures that even them obscure keyboard shortcuts from KDE to Windows still work.
+				</p>
+				<!--<img src="/img/balls-0.3.png" alt="Balls made with Capy UI, running with GTK+" style="min-width: 80%;" loading="lazy">-->
+			</div>
+			<div class="card bento-card">
+				<header>
+					<h4>In Your Language</h4>
+				</header>
+				<p>
+					Capy is made possible by Zig, featuring top-notch speeds and
+					seamless cross-compilation.
+					Most importantly, Capy exports a C API that can be used from any language (C, C++, Node / <a href="https://bun.sh/" target="_blank">Bun</a>, ...)
+				</p>
+				<footer class="is-right">
+					<a href="https://ziglang.org" target="_blank"><button>Learn more..</button></a>
+				</footer>
+			</div>
+		</div>
+	</div>
+	
+	<!--
+	<div style="width: 100%; padding: 1em 1em 1em 1em;">
+		<img src="/img/zig-hello-world.png" style="margin: auto; width: 35em; display: block;" alt="Example Zig code, see examples/ folder in Capy source code" loading="lazy"></img>
+	</div>
+	-->
+{{end}}
+
+{{ define "additional" }}
+<!--
+<div class="" style="background-color: #eee; color: #111; text-align: center;">
+	<div>
+		<h2>Live Preview</h2>
+		<p>
+		</p>
+	</div>
+</div>
+-->
+{{end}}

@@ -1,0 +1,10 @@
+baseURL = 'https://capy-ui.org'
+languageCode = 'en-us'
+title = 'Capy UI — Cross Platform GUI Toolkit'
+theme = 'capy'
+enableEmoji = true
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ['HTML']

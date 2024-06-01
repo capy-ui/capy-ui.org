@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<a href="index.xml" title="RSS" aria-label="RSS">
+    RSS
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+    </svg>
+</a>
+
+<div class="row">
+{{ range .Pages }}
+    <article class="card col-6-lg">
+        <header>
+            <a href="{{ .Permalink }}"><h3>{{ .Title }}</h3></a>
+        </header>
+        <p style="font-size: 1.75rem">{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    </article>
+{{ end }}
+</div>
+
+{{ end }}
