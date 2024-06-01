@@ -1,0 +1,32 @@
+name: Build and upload website
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y hugo
+
+      - name: Build website
+        run: |
+          hugo --minify
+
+      - name: Create SSH key
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ../private.key
+          sudo chmod 600 ../private.key
+          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+        shell: bash
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+          SSH_KNOWN_HOSTS: ${{secrets.SSH_KNOWN_HOSTS}}
+          SSH_KEY_PATH: ${{ github.workspace }}/../private.key
+
+      - name: Upload website
+        run: |
+          rsync -ave "ssh -p 8058" public/* zenith@bwsecondary.ddns.net:/etc/nginx/html/html/html_capy
