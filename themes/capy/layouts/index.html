@@ -1,4 +1,23 @@
 {{ define "hero" }}
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.min.js" async></script>
+<script>
+	document.addEventListener("DOMContentLoaded", (event) => {
+		const animate = Motion.animate;		
+		const inView = Motion.inView;
+
+		document.querySelectorAll(".bento-card").forEach((element) => {
+			element.style.opacity = "0";
+			element.style.transform = "translateX(-200px)";
+		})
+
+		inView(".bento-card", (info) => {
+			const controls = animate(info.target,
+				{ opacity: 1, transform: "none" },
+				{ delay: 0.1, duration: 0.5, easing: "ease-in-out" });
+			return (leaveInfo) => controls.stop();
+		})
+	})
+</script>
 <div class="row" style="color: #333">
 	<div style="line-height: 1.2;" class="">
 		<h1 style="line-height: 1.0; font-size: 6rem; font-family: Arial, Helvetica, sans-serif; text-align: center;">Capy — Create cross-platform apps in Zig</h1>
