@@ -21,7 +21,7 @@ usually a bad one.
 
 ## Performance
 
-Capy is coded in a systems programmnig language in order to free yourself from the overhead
+Capy is coded in a systems programming language in order to free yourself from the overhead
 of a VM or a garbage collector.
 
 Besides, Capy's goal is to be able to sustain 60 fps (and more on 120/144Hz monitors) animations,
