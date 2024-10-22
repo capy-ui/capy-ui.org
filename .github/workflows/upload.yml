@@ -15,13 +15,13 @@ jobs:
         run: |
           hugo --minify
 
-      - name: Upload webstie
+      - name: Upload website
         run: |
           mkdir -p ~/.ssh/
           echo "$SSH_PRIVATE_KEY" > ../private.key
           sudo chmod 600 ../private.key
           echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-          rsync -ave "ssh -i $SSH_KEY_PATH -p 8058" public/* zenith@bwsecondary.ddns.net:/etc/nginx/html/html/html_capy
+          rsync -ave "ssh -i $SSH_KEY_PATH" public/* root@capy-ui.org:/usr/share/www/capy-ui.org
         shell: bash
         env:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}

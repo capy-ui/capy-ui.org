@@ -11,7 +11,7 @@ Source: [examples/osm-viewer.zig](https://github.com/capy-ui/capy/blob/master/ex
 
 {{< rawhtml >}}
 <div>
-	<a href="/zig-osm/" target="_blank"><img alt="Image of the example running on Linux, it contains a map centered on London, and 'London' written in a text field above" src="/img/osm-viewer-gtk.png"></a>
+	<a href="/zig-osm/" target="_blank"><img alt="Image of the example running on Linux, it contains a map centered on London, and 'London' written in a text field above" src="/img/osm-viewer-gtk.jpg"></a>
 </div>
 {{< /rawhtml >}}
 
